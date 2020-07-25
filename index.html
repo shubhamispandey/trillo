@@ -8,11 +8,16 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+    <script src="https://kit.fontawesome.com/b8e3505483.js" crossorigin="anonymous"></script>
 
     <title>trillo &mdash; Your all-in-one booking app</title>
 </head>
 
 <body>
+    <div class="profile-nav">
+        <input type="checkbox" name="" id="profile">
+        <label for="profile"></label>
+    </div>
     <div class="container">
         <header class="header">
 
@@ -40,9 +45,20 @@
                     </svg>
                     <span class="user-nav__span">13</span>
                 </div>
-                <div class="user-nav__photo">
-                    <img src="img/user.png" alt="">
-                    <span class="user-nav__photo--name">Shubham</span>
+                <div class="user-nav__menu">
+                    <input type="checkbox" id="prof">
+                    <label for="prof" class="">
+                        <img src="img/user.png" alt="">
+                        <span class="user-nav__photo--name">Shubham</span>
+                    </label>
+                    <div class="user-nav__side-menu">
+                        <ul>
+                            <li><i class="fas fa-hotel"></i>Book Now</li>
+                            <li><i class="fas fa-check-circle"></i>Premium Hotels</li>
+                            <li><i class="fas fa-user"></i>Profile</li>
+                            <li><i class="fas fa-phone-alt"></i>Contact Us</li>
+                        </ul>
+                    </div>
                 </div>
             </nav>
 
@@ -85,7 +101,7 @@
                         </a>
                     </li>
                 </ul>
-                <div class="legal">All rights reserveved for 2020</div>
+                <div class="legal">© 2020 by trillo. All rights reserved.</div>
             </nav>
 
             <main class="hotel-view">
@@ -189,9 +205,52 @@
                         <button class="btn1">Show all<span>&rarr;</span></button>
                     </div>
                 </div>
+
+                <div class="ipad-review">
+                    <figure class="review">
+                        <blockquote class="review__text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Fuga doloremque architecto dicta animi, totam, itaque officia ex.
+                        </blockquote>
+                        <figcaption class="review__user">
+                            <img src="img/user-1.jpg" alt="" class="review__photo">
+                            <div class="review__user-box">
+                                <p class="review__user-name">John Smith</p>
+                                <p class="review__user-date">Feb 25, 2019</p>
+                            </div>
+                            <div class="review__rating">8.9</div>
+                        </figcaption>
+                    </figure>
+                    <figure class="review">
+                        <blockquote class="review__text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Fuga doloremque architecto dicta animi.
+                        </blockquote>
+                        <figcaption class="review__user">
+                            <img src="img/user-2.jpg" alt="" class="review__photo">
+                            <div class="review__user-box">
+                                <p class="review__user-name">John Smith</p>
+                                <p class="review__user-date">Feb 25, 2019</p>
+                            </div>
+                            <div class="review__rating">8.9</div>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="main__footer">
+                    <h1 class="main__footer-heading">GOOD NEWS! WE HAVE 4 FREE ROOMS FOR YOUR SELECTED DATES!</h1>
+                    <button class="btn2">
+                        <span class="btn2-primary">BOOK NOW</span>
+                        <span class="btn2-secondary">ONLY 4 ROOMS LEFT</span>
+                    </button>
+                </div>
             </main>
         </div>
     </div>
+
+    
+    <script src="js/script.js"></script>
+
 </body>
 
 </html>
