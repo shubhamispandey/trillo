@@ -3,6 +3,11 @@
     margin: 8rem auto;
     max-width: 120rem;
     box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.3);
+    @include respond(largest){
+        margin: 0;
+        max-width: 100%;
+        width: 100%;
+    }
 }
 
 .header {
@@ -12,11 +17,18 @@
     justify-content: space-between;
     align-items: center;
     font-size: 1.4rem;
+    @include respond(medium) {
+        flex-wrap: wrap;
+        height: 10rem;
+    }
     
 }
 
 .content {
     display: flex;
+    @include respond(larger) {
+        flex-direction: column;
+    }
 }
 
 .side-bar {
@@ -35,14 +47,48 @@
     line-height: 2.2rem;
     background-color: var(--color-grey-light-1);
     color: var(--color-grey-dark-2);
+
+    @include respond(large) {
+        flex-direction: column;
+    }
+    @include respond(smallest) {
+        padding: 2rem;
+    }
     .description{
         padding: 3rem;
         background-color: #fff;
         flex: 0 0 60%;
         box-shadow: var(--box-shadow-text-box);
+        @include respond(large) {
+            margin-bottom: 4rem;
+        }
+        @include respond(smallest) {
+            margin-bottom: 2rem;
+            padding: 2rem;
+        }
     }
     .user-review{
         margin-left: 4.5rem;
         flex: 1;
+        @include respond(large) {
+            margin: 0;
+        }
+    }
+    
+}
+
+.ipad-review {
+    display: flex;
+    justify-content: space-between;
+    padding: 4rem;
+    @media (min-width: 1030px) {
+        display: none;
+    }
+    @media (max-width: 1020px) {
+        display: none;
+    }
+
+    .review {
+        flex-basis: 45%;
     }
 }

@@ -5,6 +5,9 @@
     .logo {
         width: 5rem;
         margin-left: 2rem;
+        @include respond(tiny) {
+            margin-left: 1rem;
+        }
     }
 
     ////////////////////////////
@@ -14,6 +17,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        @include respond(medium){
+            order: 1;
+            width: 100%;
+        }
+        
 
         &__input {
             flex: 0 0 85%;
@@ -35,6 +43,15 @@
                 font-size: inherit;
                 color: var(--color-grey-dark-3);
             }
+            @include respond(medium) {
+                font-size: 1.6rem;
+                margin-left: -1.5rem;
+                margin-bottom: 0.8rem;
+                &:focus {
+                    background-color: var(--color-grey-light-3);
+                    flex: 0 0 95%;
+                }
+            }
         }
 
         &__button {
@@ -47,6 +64,9 @@
             margin-left: -3.5rem;
             transition: 0.3s all ease-in-out;
             cursor: pointer;
+            @include respond(medium){
+                transform: translateY(-0.5rem);
+            }
         }
 
         &__icon {
@@ -85,11 +105,12 @@
             fill: var(--color-grey-dark-2)
         }
 
-        &__photo {
+        &__menu {
             padding: 0 2rem;
+            position: relative;
         }
 
-        &__photo img {
+        &__menu img {
             width: 4.5rem;
             height: 4rem;
             margin-right: 0.5rem;
@@ -109,6 +130,28 @@
             font-size: 1.2rem;
             width: 1.8rem;
             height: 1.8rem;
+        }
+
+        //side nav for profile
+        &__side-menu{
+            color: var(--color-primary);
+            background-color: #fff;
+            position: absolute;
+            top: 100%;
+            width: 100%;
+            height: 15rem;
+            ul{
+                list-style: none;
+            }
+            li{
+                border-bottom: 1px solid var(--color-dark-grey-3);
+                font-weight: 400;
+                padding: 0.9rem  1.5rem;
+
+                i{
+                    margin-right: 1rem;
+                }
+            }
         }
     }
 }
@@ -131,6 +174,10 @@
     &__nav {
         list-style: none;
         margin-top: 4rem;
+        @include respond(larger) {
+            display: flex;
+            margin: 0   ;
+        }
     }
 
     &__element {
@@ -142,6 +189,9 @@
 
         &:not(:last-child) {
             margin-bottom: 0.5rem;
+            @include respond(larger) {
+                margin-bottom: 0;
+            }
         }
 
         &-link {
@@ -154,6 +204,10 @@
             display: block;
             display: flex;
             align-items: center;
+            @include respond(medium) {
+                flex-direction: column;
+                padding: 1.5rem 0rem;
+            }
         }
 
         &::before {
@@ -179,13 +233,22 @@
             background: var(--color-primary-light);
         }
 
+        @include respond(larger) {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
     }
 
     &__icons {
         height: 1.75rem;
         width: 1.75rem;
         margin-right: 1.5rem;
-
+        @include respond(medium) {
+            margin: 0;
+            margin-bottom: 0.5rem;
+        }
         fill: currentColor;
     }
 
@@ -200,6 +263,9 @@
     justify-content: center;
     align-items: center;
     padding: 2rem;
+    @include respond(larger) {
+        display: none;
+    }
 }
 
 ////////////////////////////
@@ -216,6 +282,7 @@
 // OVERVIEW
 .overview {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     transform: translateY(-0.5rem);
 
@@ -224,12 +291,26 @@
         font-weight: 300;
         padding: 1rem 2rem;
         text-transform: uppercase;
+        @include respond(small) {
+            margin-right: auto;
+        }
     }
 
     &__stars {
         margin-right: auto;
         display: flex;
         align-items: center;
+
+        @include respond(small) {
+            order: 1;
+            flex-basis: 50%;
+            margin: auto;
+            margin-left: 2rem;
+        }
+        @include respond(smallest) {
+            flex-basis: 24%;
+            margin-right: 0;
+        }
     }
 
     &__icons {
@@ -288,6 +369,10 @@
         background: rgba(0, 0, 0, 0.0);
         animation: pulsate 1s infinite;
     }
+    @include respond(smallest) {
+       order: 2;
+       flex-basis: 40%;
+    }
 }
 
 @keyframes pulsate {
@@ -309,8 +394,20 @@
 //  DISCREPTION
 
 .description {
+
     .paragraph:not(:last-of-type) {
         margin-bottom: 2rem;
+    }
+
+    @media (min-width:1050px){
+        .paragraph-ipadpro{
+            display: none;
+        }
+    }
+    @media (max-width:1000px) {
+        .paragraph-ipadpro {
+            display: none;
+        }
     }
 
     .list {
@@ -351,15 +448,16 @@
 
     .recomend {
         display: flex;
-        align-items: center;
-        flex-wrap: wrap;
+        align-items: center;    
 
         &__count {
             margin-right: auto;
             color: var(--color-grey-dark-3);
         }
 
-
+        &__freinds{
+            display: flex;
+        }
         &__photo {
             box-sizing: content-box;
             padding: 0;
@@ -378,44 +476,60 @@
 
 ////////////////////////////
 //  USER-REVIEW
-.review{
+.review {
     padding: 3rem;
     margin-bottom: 4rem;
     background: #fff;
     box-shadow: var(--box-shadow-text-box);
     position: relative;
     overflow: hidden;
-    &__text{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include respond(smallest) {
+        margin-bottom: 2rem;
+        padding: 2rem;
+    }
+
+    &__text {
         margin-bottom: 2rem;
         position: relative;
     }
+
     &__user {
         display: flex;
         align-items: center;
     }
+
     &__photo {
         width: 4rem;
         height: 4rem;
         border-radius: 50%;
     }
-    &__user-box{
+
+    &__user-box {
         margin-left: 1.8rem;
         flex: 1;
     }
-    &__user-name{
+
+    &__user-name {
         font-size: 1.2rem;
         font-weight: 600;
     }
+
     &__user-date {
         font-size: 1rem;
         font-weight: 400;
     }
-    &__rating{
+
+    &__rating {
         font-size: 2.2rem;
         color: var(--color-primary);
     }
-    
-    &::before{
+
+    &::before {
         content: "\201C";
         position: absolute;
         top: 6.2rem;
@@ -425,6 +539,7 @@
         font-family: sans-serif;
     }
 }
+
 .btn1 {
     border: none;
     padding: 0.5rem 0rem;
@@ -438,10 +553,12 @@
 
     display: flex;
     align-items: center;
+    margin: auto;
 
     &:hover {
         color: var(--color-grey-dark-1);
-        span{
+
+        span {
             margin-left: 1rem;
         }
     }
@@ -452,3 +569,79 @@
         font-weight: 600;
     }
 }
+
+.main__footer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    &-heading {
+        font-size: 2.2rem;
+        font-weight: 300;
+        margin: 4rem auto 3rem;
+        @include respond(large) {
+            width: 90%;
+            line-height: 2.8rem;
+            text-align: center;
+        }
+        @include respond(smallest) {
+            margin: 2rem auto 1.5rem;
+        }
+    }
+    
+}
+
+//BUTTON
+.btn2 {
+    padding: 2.8rem 0rem;
+    margin-bottom: 4rem;
+    border-radius: 10rem;
+    border: none;
+    background-image: linear-gradient(to right bottom, var(--color-primary-light), var(--color-primary-dark));
+    color: #fff;
+    font-weight: 400;
+    font-size: 1.6rem;
+    width: 23rem;
+    position: relative;
+    outline: none;
+    cursor: pointer;
+    overflow: hidden;
+    transition: 0.2s cubic-bezier(.66,.01,.16,1.01);
+
+    &-primary {
+        position: absolute;
+        display: inline-block;
+        width: 20rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: 0.2s cubic-bezier(.66,.01,.16,1.01);
+    }
+
+    &-secondary {
+        position: absolute;
+        display: inline-block;
+        width: 20rem;
+        top: -100%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: 0.2s cubic-bezier(.66,.01,.16,1.01);
+    }
+
+    &:hover {
+        background-image: linear-gradient(to right bottom, var(--color-primary-dark),var(--color-primary-light));
+    }
+
+    &:hover &-secondary {
+        top: 50%;
+    }
+
+    &:hover &-primary {
+        top: 150%;
+    }
+}
+
+//FINAL TOUCH
+
+//REMOVE HOVER ON SMALL DEVICES
+

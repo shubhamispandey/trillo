@@ -15,10 +15,59 @@
     --box-shadow-text-box: 0 1rem 2rem rgba(0, 0, 0, 0.1);
 }
 
+@mixin respond($bp){
+    @if($bp==largest){
+        @media only screen and (max-width:84.375em) {//1350px
+            @content;
+        }
+    }
+    @if($bp==larger) {
+        @media only screen and (max-width:75em) {//1200px
+            @content;
+        }
+    }
+    @if($bp==large) {
+        @media only screen and (max-width:50em) {//800px
+            @content;
+        }
+    }
+    @if($bp==medium) {
+        @media only screen and (max-width:43.75em) {//700px
+            @content;
+        }
+    }
+    @if($bp==small) {
+        @media only screen and (max-width:31.25em) {//500px
+            @content;
+        }
+    }
+    @if($bp==smaller) {
+        @media only screen and (max-width:25em) {//400px
+            @content;
+        }
+    }
+    @if($bp==smallest) {
+        @media only screen and (max-width:21.8em) {//350px
+            @content;
+        }
+    }
+    @if($bp==tiny) {
+        @media only screen and (max-width:17.82em) {//285px
+            @content;
+        }
+    }
+}
+
 html{
     box-sizing: border-box;
-    font-size: 62.5%;
+    font-size: 62.5%;//10px
     font-weight: 400;
+    @include respond(medium) {
+        font-size: 56.25%;//9px
+    }
+    @include respond(small) {
+        font-size: 50%; //8px
+    }
 }
 
 
@@ -38,5 +87,8 @@ body{
     background-image: linear-gradient(to bottom right , var(--color-primary-light),var(--color-primary-dark));
     background-size: cover;
     background-repeat: no-repeat;
+    @include respond(largest) {
+        padding: 0;
+    }
 }
 
