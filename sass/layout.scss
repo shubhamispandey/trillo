@@ -3,6 +3,7 @@
     margin: 8rem auto;
     max-width: 120rem;
     box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.3);
+    overflow: hidden;
     @include respond(largest){
         margin: 0;
         max-width: 100%;
