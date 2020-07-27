@@ -408,7 +408,7 @@ body {
 .notf-box {
   width: 30rem;
   position: absolute;
-  top: 2500%;
+  top: 5000%;
   right: -250%;
   transform: translateX(-50%);
   color: #fff;
