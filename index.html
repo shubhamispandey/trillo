@@ -31,11 +31,104 @@
 
             <nav class="user-nav">
                 <div class="user-nav__icon-box">
-                    <svg class="user-nav__icon">
-                        <use xlink:href="img/sprite.svg#icon-bookmarks"></use>
-                    </svg>
-                    <span class="user-nav__span">7</span>
+                    <input type="checkbox" id="notf" class="check-box-notf">
+                    <label for="notf" class="check-box-notf__label">
+                        <svg class="user-nav__icon">
+                            <use xlink:href="img/sprite.svg#icon-bookmarks"></use>
+                        </svg>
+                        <span class="user-nav__span">7</span>
+                    </label>
+
+
+                    <!--  -------------------------------------------------------------------   -->
+                    <!--  ----------------------notification window--------------------------   -->
+
+
+                    <div class="notf-box">
+                        <div class="notf-box__top">
+                            <p>Notifications</p>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <div class="notf-box__mid">
+                            <ul>
+
+                                <li>
+                                    <div class="notf-box__mid-photo">
+                                        <img src="img/user-3.jpg" alt="">
+                                        <span></span>
+                                    </div>
+                                    <div class="text">
+                                        <p>
+                                            <span class=".imp">Brigid Dowson</span> liked your post
+                                        </p>
+                                        <div class="time">4 hours ago</div>
+                                    </div>
+                                    <span class="dot"></span>
+                                </li>
+
+                                <li>
+                                    <div class="notf-box__mid-photo">
+                                        <img src="img/user-4.jpg" alt="">
+                                        <span></span>
+                                    </div>
+                                    <div class="text">
+                                        <p>
+                                            <span class=".imp">dow hellman</span> followed you
+                                        </p>
+                                        <div class="time">Yesterday</div>
+                                    </div>
+                                    <span class="dot"></span>
+                                </li>
+
+                                <li>
+                                    <div class="notf-box__mid-photo">
+                                        <img src="img/user-2.jpg" alt="">
+                                        <span></span>
+                                    </div>
+                                    <div class="text">
+                                        <p>
+                                            <span class=".imp">Nancy</span> followed you
+                                        </p>
+                                        <div class="time">Monday</div>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="notf-box__mid-stor">
+                                        <i class="fas fa-exclamation-triangle"
+                                            style="margin-right: 1.5rem;font-size: 2.5rem;"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p><span class=".imp">running low on storage</span></p>
+                                        <div class="time">Sunday</div>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="notf-box__mid-photo">
+                                        <img src="img/user-6.jpg" alt="">
+                                        <span></span>
+                                    </div>
+                                    <div class="text">
+                                        <p>
+                                            <span class=".imp">Shanowan</span> commented on your post
+                                        </p>
+                                        <div class="time">7 days ago</div>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="notf-box__bot">
+                            <p>See all recent activities</p>
+                        </div>
+                    </div>
+
+                    <!--  -------------------------------------------------------------------   -->
+                    <!--  ----------------------notification window end--------------------------   -->
+
                 </div>
+
                 <div class="user-nav__icon-box user-nav__icon-box-2">
                     <input type="checkbox" id="chat" class="check-box-chat">
                     <label for="chat" class="check-box-chat__label">
@@ -45,8 +138,8 @@
                         <span class="user-nav__span">13</span>
                     </label>
 
-<!-- ------------------------------------------------------------------ -->
-<!-- ----------------------------chat window--------------------------- -->
+                    <!-- ------------------------------------------------------------------ -->
+                    <!-- ----------------------------chat window--------------------------- -->
 
 
                     <div class="chat-window">
@@ -67,7 +160,8 @@
                                 </div>
                             </div>
                             <div class="chat-window__mid-user">
-                                <div class="chat-window__mid-user-photo chat-window__mid-user-photo-2"><img src="img/user-8.jpg" alt=""></div>
+                                <div class="chat-window__mid-user-photo chat-window__mid-user-photo-2"><img
+                                        src="img/user-8.jpg" alt=""></div>
                                 <div class="chat-window__mid-user-text chat-window__mid-user-text-2">
                                     <p>Hello I was looking to book a hotel</p>
                                     <span>32 sec ago</span>
@@ -75,15 +169,15 @@
                             </div>
                         </div>
                         <div class="chat-window__bottom">
-                            <input type="text">
+                            <input type="text" placeholder="message">
                             <span></span>
                             <a href=""><i class="fas fa-paper-plane"></i></a>
                             <a href=""><i class="fas fa-link"></i></a>
                         </div>
                     </div>
 
-<!-- ----------------------------chat window--------------------------- -->
-<!-- ------------------------------------------------------------------ -->
+                    <!-- ----------------------------chat window--------------------------- -->
+                    <!-- ------------------------------------------------------------------ -->
 
                 </div>
                 <div class="user-nav__menu">
@@ -97,7 +191,8 @@
                             <li><a href=""><i class="fas fa-hotel"></i>Book Now</a></li>
                             <li><a href=""><i class="fas fa-check-circle"></i>Premium Hotels</a></li>
                             <li><a href=""><i class="fas fa-user"></i>Profile</a></li>
-                            <li><a href="" class="animate__animated animate__tada"><i class="fas fa-phone-alt"></i>Contact Us</a></li>
+                            <li><a href="" class="animate__animated animate__tada"><i
+                                        class="fas fa-phone-alt"></i>Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
@@ -150,19 +245,19 @@
                     <figure class="gallery__box">
                         <img src="img/hotel-1.jpg" alt="" class="gallery__photo">
                         <figcaption class="gallery__text">
-                            <h1>Aukat se bahar</h1>
+                            <h1>Four Seasons Resort</h1>
                         </figcaption>
                     </figure>
                     <figure class="gallery__box">
                         <img src="img/hotel-2.jpg" alt="" class="gallery__photo">
                         <figcaption class="gallery__text">
-                            <h1>Aukat se bahar</h1>
+                            <h1>The Lodge at Sea Island</h1>
                         </figcaption>
                     </figure>
                     <figure class="gallery__box">
                         <img src="img/hotel-3.jpg" alt="" class="gallery__photo">
                         <figcaption class="gallery__text">
-                            <h1>Aukat se bahar</h1>
+                            <h1>The Greenwich Hotel</h1>
                         </figcaption>
                     </figure>
                 </div>
@@ -304,7 +399,7 @@
         </div>
     </div>
 
-    
+
     <script src="js/script.js"></script>
 
 </body>
