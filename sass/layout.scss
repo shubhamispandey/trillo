@@ -4,6 +4,9 @@
     max-width: 120rem;
     box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.3);
     overflow: hidden;
+    @include respond(huge) {
+        transform: scale(1.1);
+    }
     @include respond(largest){
         margin: 0;
         max-width: 100%;
